@@ -1,0 +1,120 @@
+t.me/gena460_bot
+
+Congratulations on my bot. You will find it in Telegram at @gena460_bot.
+
+
+t.me/gena460_bot
+
+Congratulations on my bot. You will find it in Telegram at @gena460_bot.
+
+Commands, what used for the building:
+
+1. Clone new repo:
+$ git clone https://github.com/gena460/kbot.git
+
+2. Initializing new Go project:
+$ go mod init github.com/gena460/kbot
+
+3. Install useful template for the new Golang project:
+$ go install github.com/spf13/cobra-cli@latest
+
+4. Initializing CLI:
+$ cobra-cli init
+
+5. Add Cobra - CLI library for Go that empowers applications. This application is a tool to generate the needed files
+to quickly create a Cobra application.:
+$ cobra-cli add version
+
+6. Help module:
+$ go run main.go help
+
+7. Version module:
+$ go run main.go version
+
+8. Add necessary for binary file with name kbot:
+$ cobra-cli add kbot
+
+9. Add contexts in the files version.go, kbot.go
+
+10. Build project
+$ go build -ldflags "-X="github.com/gena460/kbot/cmd.appVersion=v1.0.0
+
+11. Run binary
+./kbot
+
+12. Check version 
+./kbot version
+
+13. Create in repo's folder file .gitignore
+touch .gitignore
+
+14. Add binary file with name "kbot" to .gitignore
+
+15. Add new context in the file kbot.go
+
+16. Format Golang files:
+gofmt -s -w ./
+
+17. Add dependencies
+go get
+
+18. Build new version
+go build -ldflags "-X="github.com/gena460/kbot/cmd.appVersion=v1.0.1
+
+19. Run new version kbot:
+./kbot
+Usage:
+  kbot [command]
+
+Available Commands:
+  completion  Generate the autocompletion script for the specified shell
+  help        Help about any command
+  kbot        A brief description of your command
+  version     A brief description of your command
+
+Flags:
+  -h, --help     help for kbot
+  -t, --toggle   Help message for toggle
+
+Use "kbot [command] --help" for more information about a command.
+
+20. Modified kbot.go
+
+21. Rebuild version 1.0.1:
+$ go build -ldflags "-X="github.com/gena460/kbot/cmd.appVersion=v1.0.1
+
+22. Start with argument:
+./kbot start
+kbot v1.0.1 started2023/05/01 04:18:30 Please, check TELE_TOKEN env variable. telegram: Not Found (404)
+
+23. Add own bot via official Telegram helpers @BotFather:
+/newbot
+
+24. Choose name and address for bot:
+kbot
+gena460_bot
+
+25. Copy token from @BotFather to access the HTTP API
+
+26. Paste Ctrl+V token after executing next command:
+$ read -s TELE_TOKEN
+
+27. Check token as Variable:
+$ echo $TELE_TOKEN
+
+28. Export Variable:
+$ export TELE_TOKEN
+
+29. Start program
+$ ./kbot start
+
+30. Make changes in kbot.go
+
+31. Build new version 1.0.2
+$ go build -ldflags "-X="github.com/gena460/kbot/cmd.appVersion=v1.0.2
+
+
+32. Find and check bot from Telegram
+@gena460_bot
+/start
+/start hello
