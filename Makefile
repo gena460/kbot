@@ -1,8 +1,8 @@
-APP=$(basename $(shell git remote get-url origin))
-REGISTRY=gena460
+APP := $(shell basename $(shell git remote get-url origin))
+REGISTRY := gena460
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-TARGETOS=linux
-TARGETARCH=arm64
+TARGETOS=linux #linus darwin windows
+TARGETARCH=arm64 #amd64 arm64
 
 format:
 	gofmt -s -w ./
