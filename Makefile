@@ -1,8 +1,8 @@
 APP := $(shell basename $(shell git remote get-url origin))
 REGISTRY := gena460
 VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-TARGETOS=linux #linus darwin windows
-TARGETARCH=arm64 #amd64 arm64
+TARGETOS=linux #linux darwin windows
+TARGETARCH=amd64 #amd64 arm64
 
 format:
 	gofmt -s -w ./
@@ -28,3 +28,4 @@ push:
 
 clean:
 	rm -rf kbot
+	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} 
