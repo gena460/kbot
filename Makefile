@@ -62,8 +62,10 @@ clean-linux:
 
 clean-windows:
 	rm -rf kbot
-	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+#	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+	docker images --filter=reference=${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} -q | xargs -r docker rmi -f
 
 clean-darwin:
 	rm -rf kbot
-	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+#	docker rmi ${REGISTRY}/${APP}:${VERSION}-${TARGETARCH}
+	docker images --filter=reference=${REGISTRY}/${APP}:${VERSION}-${TARGETARCH} -q | xargs -r docker rmi -f
