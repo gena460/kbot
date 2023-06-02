@@ -1,0 +1,20 @@
+# Default values for helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  registry: "docker.io"
+  repository: "gena460/kbot"
+  tag: "v1.0.7-3e9b89f4"
+  os: linux
+  arch: amd64
+secret:
+  name: kbot
+  tokenKey: token
+  tokenName: TELE_TOKEN
+service:
+  port: 80
+securityContext:
+  privileged: true
