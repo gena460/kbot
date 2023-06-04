@@ -4,15 +4,16 @@
 
 replicaCount: 1
 image:
-  registry: "docker.io"
+  registry: "ghcr.io"
   repository: "gena460/kbot"
-  tag: "v.1.0.6-8e35400"
+  tag: "v1.0.0-106879e"
   os: linux
   arch: amd64
+  TELE_TOKEN: TELE_TOKEN
 secret:
-  name: "kbot"
-  tokenKey: "token"
-  tokenName: "TELE_TOKEN"
+  name: kbot
+  tokenKey: token
+  tokenName: TELE_TOKEN
 service:
   port: 80
 securityContext:

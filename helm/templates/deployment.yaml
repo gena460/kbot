@@ -39,39 +39,12 @@ spec:
           volumeMounts:
           - mountPath: /dev/mem
             name: dev-mem
-          image: {{ .Values.image.registry }}/{{ .Values.image.repository }}/{{ .Chart.Name }}:{{ .Values.image.tag | default .Chart.AppVersion }}-{{ .Values.image.os | default "linux" }}-{{ .Values.image.arch | default "amd64" }}
+#          image: {{ .Values.image.registry }}/{{ .Values.image.repository }}/{{ .Chart.Name }}:{{ .Values.image.tag | default .Chart.AppVersion }}-{{ .Values.image.os | default "linux" }}-{{ .Values.image.arch | default "amd64" }}
+          image: {{ .Values.image.repository }}/{{ .Chart.Name }}:{{ .Values.image.tag | default .Chart.AppVersion }}-{{ .Values.image.arch | default "amd64"}}
+#          image: {{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}
           env:
           - name: {{ .Values.secret.tokenName }}
             valueFrom:
               secretKeyRef:
                 key: {{ .Values.secret.tokenKey }}
                 name: {{ .Values.secret.name }}
-{{- /*
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
-          ports:
-            - name: http
-              containerPort: {{ .Values.service.port }}
-              protocol: TCP
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-          resources:
-            {{- toYaml .Values.resources | nindent 12 }}
-      {{- with .Values.nodeSelector }}
-      nodeSelector:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.affinity }}
-      affinity:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-      {{- with .Values.tolerations }}
-      tolerations:
-        {{- toYaml . | nindent 8 }}
-      {{- end }}
-*/}}
