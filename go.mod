@@ -5,6 +5,7 @@ go 1.20
 require (
 	github.com/spf13/cobra v1.7.0
 	gopkg.in/telebot.v3 v3.1.3
+//	github.com/stianeikeland/go-rpio v4.2.0+incompatible
 )
 
 require (
