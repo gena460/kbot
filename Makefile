@@ -1,8 +1,10 @@
+#REGISTRY := gena460
+REGISTRY := ghcr.io/gena460
+VERSION := $(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
+TARGETOS := linux #linux darwin windows
+TARGETARCH := amd64 #amd64 arm64
+CGO_ENABLED := 0
 APP := $(shell basename $(shell git remote get-url origin))
-REGISTRY := gena460
-VERSION=$(shell git describe --tags --abbrev=0)-$(shell git rev-parse --short HEAD)
-TARGETOS=linux #linux darwin windows
-TARGETARCH=amd64 #amd64 arm64
 
 format:
 	gofmt -s -w ./
