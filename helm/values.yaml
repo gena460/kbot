@@ -6,7 +6,7 @@ replicaCount: 1
 image:
   registry: "docker.io"
   repository: "gena460/kbot"
-  tag: "v.1.0.6-8e35400"
+  tag: "v.1.0.6-d01f776"
   os: linux
   arch: amd64
 secret:
